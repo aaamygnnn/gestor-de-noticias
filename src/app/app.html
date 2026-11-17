@@ -1,0 +1,44 @@
+<div style="padding: 20px; font-family: Arial, sans-serif; max-width: 900px; margin: auto;">
+  <h1>📰 Gestor de Noticias - Angular & TypeScript</h1>
+  <hr>
+
+  <!-- FORMULARIO DE AGREGAR -->
+  <h2>1. Agregar Nueva Noticia</h2>
+  <div style="background: #f4f4f4; padding: 15px; border-radius: 5px;">
+    <input type="text" [(ngModel)]="nuevoTitulo" placeholder="Título de la noticia" style="width: 95%; margin-bottom: 8px; padding: 6px;"><br>
+    <textarea [(ngModel)]="nuevoContenido" placeholder="Contenido de la noticia" style="width: 95%; margin-bottom: 8px; padding: 6px;"></textarea><br>
+    <input type="text" [(ngModel)]="nuevaImagenUrl" placeholder="URL de la imagen" style="width: 45%; margin-right: 10px; padding: 6px;">
+    <input type="text" [(ngModel)]="nuevoAutor" placeholder="Autor" style="width: 45%; padding: 6px;"><br><br>
+    <button (click)="onAgregar()" style="background: #28a745; color: white; border: none; padding: 10px 15px; cursor: pointer;">+ Agregar Noticia</button>
+  </div>
+
+  <br>
+
+  <!-- FORMULARIO DE EDITAR -->
+  <h2>2. Editar Noticia Existente</h2>
+  <div style="background: #e9ecef; padding: 15px; border-radius: 5px;">
+    <input type="number" [(ngModel)]="editId" placeholder="ID de la noticia a editar" style="width: 30%; margin-bottom: 8px; padding: 6px;"><br>
+    <input type="text" [(ngModel)]="editTitulo" placeholder="Nuevo Título" style="width: 95%; margin-bottom: 8px; padding: 6px;"><br>
+    <textarea [(ngModel)]="editContenido" placeholder="Nuevo Contenido" style="width: 95%; margin-bottom: 8px; padding: 6px;"></textarea><br>
+    <input type="text" [(ngModel)]="editImagenUrl" placeholder="Nueva URL de Imagen" style="width: 45%; margin-right: 10px; padding: 6px;">
+    <input type="text" [(ngModel)]="editAutor" placeholder="Nuevo Autor" style="width: 45%; padding: 6px;"><br><br>
+    <button (click)="onEditar()" style="background: #007bff; color: white; border: none; padding: 10px 15px; cursor: pointer;">💾 Guardar Cambios</button>
+  </div>
+
+  <br>
+
+  <!-- FORMULARIO DE ELIMINAR -->
+  <h2>3. Eliminar Noticia</h2>
+  <div style="background: #f8d7da; padding: 15px; border-radius: 5px;">
+    <input type="number" [(ngModel)]="eliminarId" placeholder="ID de la noticia a eliminar" style="width: 30%; margin-right: 10px; padding: 6px;">
+    <button (click)="onEliminar()" style="background: #dc3545; color: white; border: none; padding: 8px 15px; cursor: pointer;">🗑️ Eliminar por ID</button>
+  </div>
+
+  <br><hr>
+
+  <!-- VISUALIZACIÓN JSON -->
+  <h2>📋 Salida en Texto Plano (Arreglo JSON)</h2>
+  <pre style="background: #272822; color: #f8f8f2; padding: 15px; border-radius: 5px; font-size: 14px; overflow-x: auto;">
+{{ noticiasJson }}
+  </pre>
+</div>
